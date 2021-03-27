@@ -1,3 +1,5 @@
+{% set colors = gen_colors() %}
+{% set curtains = print_curtains() %}
 <style>
 pre {
     margin: 0;
@@ -16,7 +18,37 @@ pre {
 	background-color: #bbffbb;
 }
 
+.grimes {
+	color: {{ colors[2] }};
+}
+
+a:hover, a:active {
+	color: {{ colors[2] }} !important;
+	background: none !important;
+}
+
+a:link, a:visited {
+	color:{{ colors[1] }};
+	text-decoration:none;
+}
+
+body  {
+	background-color:{{ colors[3] }};
+	position: relative;
+	color: {{ colors[0] }};
+	font-size: 15px;
+}
 </style>
+
+
+
+
+<div class="grimes" style="float:left;width:20%; text-align:right">
+{{ curtains[0]|safe }}
+</div>
+<div style="float:left;width:60%">
+
+
 
 
 {% set poke_no = range(1,41)|random()|string %}
@@ -37,11 +69,28 @@ pre {
 88       88.  .88 88  `8b. 88.  ... M. `MMM' .M MMMM  MMMM MM  MMMMMMMM 
 dP       `88888P' dP   `YP `88888P' MM.     .dM MMMM  MMMM MM  MMMMMMMM 
                                     MMMMMMMMMMM MMMMMMMMMM MMMMMMMMMMMM 
+
+:::::::::  :::::::::  ::::::::::     :::     ::::    ::::  
+:+:    :+: :+:    :+: :+:          :+: :+:   +:+:+: :+:+:+ 
++:+    +:+ +:+    +:+ +:+         +:+   +:+  +:+ +:+:+ +:+ 
++#+    +:+ +#++:++#:  +#++:++#   +#++:++#++: +#+  +:+  +#+ 
++#+    +#+ +#+    +#+ +#+        +#+     +#+ +#+       +#+ 
+#+#    #+# #+#    #+# #+#        #+#     #+# #+#       #+# 
+#########  ###    ### ########## ###     ### ###       ### 
+			 :::::::: ::::::::::: ::::::::::                           
+			:+:    :+:    :+:     :+:                                  
+			+:+           +:+     +:+                                  
+			+#+           +#+     :#::+::#                             
+			+#+           +#+     +#+                                  
+			#+#    #+#    #+#     #+#                                  
+			 ########     ###     ###                                  
                                                                         
 </pre>
 </center>
 
+
 <br/>
+
 
 
 
@@ -54,3 +103,8 @@ dP       `88888P' dP   `YP `88888P' MM.     .dM MMMM  MMMM MM  MMMMMMMM
 {% endblock %}
 </pre>
 </center>
+
+</div>
+<div class="grimes" style="float:left;width:20%">
+{{ curtains[1]|safe }}
+</div>

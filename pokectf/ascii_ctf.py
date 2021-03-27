@@ -213,9 +213,11 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-
 if __name__ == '__main__':
-    app.run(debug=False)
+    import curtains, color
+    app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
+    app.jinja_env.globals.update(gen_colors=color.randomScheme)
+    app.run(debug=True)
 
 
 
