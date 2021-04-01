@@ -41,5 +41,11 @@ def grimerFor(key):
 
     return unstableGrimes # same function every time (grimer is a function)
 
+def gg(string):
+    out = ''
+    for i in range(len(string)):
+        out += unstableGrimes(int(string[i]))
+    return out
+
 
 print(randomGrimer()(3))

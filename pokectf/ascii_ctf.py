@@ -214,9 +214,10 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    import curtains, color
+    import curtains, color, grimes
     app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
     app.jinja_env.globals.update(gen_colors=color.randomScheme)
+    app.jinja_env.globals.update(gatto=grimes.gg)
     app.run(debug=True)
 
 

@@ -2,10 +2,8 @@ import random
 import math as Math
 import grimes
 import cellular
-# let grimes = require('./grimes.js')
-# let helpers = require('./helpers.js')
-# let cellular = require('./cellular')
-# const choice = helpers.choice
+
+curtain_len = 20
 
 def curtainsFor(key):
     if (key == 'none' or key == 'no'):
@@ -28,7 +26,7 @@ def randomCurtains ():
 def glowCurtains (grimer):
     bias = Math.floor(random.random() * 5) - 1
     right = ''
-    for i in range(10):
+    for i in range(curtain_len):
         digit = i
         if (bias): digit = digit + bias
         if (digit > 9): digit = 9
@@ -43,13 +41,14 @@ def glowCurtains (grimer):
 
 def reversedGlowCurtains (grimer):
     c = glowCurtains(grimer)
-    return { left: c.right, right: c.left }
+    # return (c[1], c[0])
+    return (c[0], c[1])
 
 def undefinedCurtains():
     return { left: '~undefined', right: 'undefined~' }
 
 def noCurtains ():
-    return { left: '          ', right: '          ' }
+    return ( left, right )
 
 
 
@@ -61,13 +60,14 @@ zag = ''
 
 def zigzagCurtains ():
     global z_diro,z_dirindex,z_maxIns, zag
-    mina = 11
-    maxa = 24
+    mina = (curtain_len - 10) + 12
+    maxa = (curtain_len - 10) + 24
     thisTime = mina + Math.floor(random.random() * (maxa - mina))
     bias = Math.floor(random.random() * 3) - 2
+    zaglen = 1 + random.random()
     zag = ''
     for i in range(thisTime):
-        digit = i
+        digit = int(i // (curtain_len / (10*zaglen)))
         if (bias): digit = digit + bias
         if (digit > 9): digit = 9
         if (digit < 0): digit = 0
@@ -76,8 +76,9 @@ def zigzagCurtains ():
             if (bias < -1): bias = -1
         zag += '' + str(digit)
     zag += zag
+    print(zag)
 
-    z_maxIns = thisTime - 10 # curtains are 10 wide
+    z_maxIns = thisTime - curtain_len # curtains are 10 wide
     z_dirindex = Math.floor(random.random() * z_maxIns)
     z_diro = Math.floor(random.random() * 2) == 1
     if (z_dirindex == 0):
@@ -88,7 +89,7 @@ def zigzagCurtains ():
 
     def lambdata(grimer):
         global z_dirindex, z_diro, zag, z_maxIns
-        returnString = grimes.grimeString(zag[z_dirindex:z_dirindex+10], grimer)
+        returnString = grimes.grimeString(zag[z_dirindex:z_dirindex+curtain_len], grimer)
         if (z_diro):
             z_dirindex -= 1
             if (z_dirindex <= 0): z_diro = False
@@ -97,8 +98,8 @@ def zigzagCurtains ():
             if (z_dirindex >= z_maxIns): z_diro = True
 
         rev = returnString[::-1]
-        if (reversed): return ( rev, returnString)
-        return (returnString, rev)
+        # if (reversed): return (returnString, rev)
+        return ( rev, returnString)
     return lambdata
 
 def randomBinary(length):
@@ -123,14 +124,15 @@ def cellularCurtains():
         # print("res", z_state)
         dreamified = cellular.translate(z_state, [9, 3]) # which grimes to use
         return (
-            grimes.grimeString(dreamified[0:10], grimer),
-            grimes.grimeString(dreamified[-10:], grimer)
+            grimes.grimeString(dreamified[0:curtain_len], grimer),
+            grimes.grimeString(dreamified[-curtain_len:], grimer)
         )
     return lambdata
 
 def print_curtains():
     grimer = grimes.grimerFor('stable')
-    lambdata = cellularCurtains()
+    # lambdata = cellularCurtains()
+    lambdata = randomCurtains()
     l, r = "", ""
     for i in range(80):
         a, b = lambdata(grimer)
