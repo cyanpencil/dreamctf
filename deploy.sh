@@ -13,8 +13,8 @@ dbmount="$(pwd)/pokectf:/home/poke/pokectf"
 
 # webserver
 sudo $docker build --file=./docker_files/main/Dockerfile -t pokectf:latest .
-#sudo $docker run -v $dbmount -d -p 5000:5000 -it pokectf 
-sudo $docker run -v $dbmount --net host -p 5000:5000 -it pokectf /bin/bash
+sudo $docker run -v $dbmount -d -p 5000:5000 -it pokectf 
+#sudo $docker run -v $dbmount --net host -p 5000:5000 -it pokectf /bin/bash
 
 
 # challenges

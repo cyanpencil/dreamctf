@@ -41,6 +41,18 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
+################################
+#########   stuff for new frontend   ##########
+################################
+import curtains, color, grimes
+app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
+app.jinja_env.globals.update(gen_colors=color.randomScheme)
+app.jinja_env.globals.update(gatto=grimes.gg)
+
+
+
+
 ################################
 ##########   MODELS   ##########
 ################################
@@ -213,13 +225,9 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
-    import curtains, color, grimes
-    app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
-    app.jinja_env.globals.update(gen_colors=color.randomScheme)
-    app.jinja_env.globals.update(gatto=grimes.gg)
-    app.run(debug=True)
 
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
