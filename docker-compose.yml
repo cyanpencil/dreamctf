@@ -11,7 +11,33 @@ services:
         target: /home/poke/pokectf
   
   # All challenges come here:
-  # pokectf_pwn2:
-  #   build: ./docker_files/pwn2/
-  #   ports:
-  #     - "5001:5001"
+  pokectf_pwn1:
+    build:
+      context: .
+      dockerfile: ./docker_files/pwn1/Dockerfile
+    ports:
+      - "5001:5006"
+  pokectf_pwn2:
+    build: 
+      context: .
+      dockerfile: ./docker_files/pwn2/Dockerfile
+    ports:
+      - "5002:5001"
+  pokectf_web1:
+    build: 
+      context: .
+      dockerfile: ./docker_files/web1/Dockerfile
+    ports:
+      - "5003:5000"
+  pokectf_web2:
+    build: 
+      context: .
+      dockerfile: ./docker_files/web2/Dockerfile
+    ports:
+      - "5004:5000"
+  pokectf_web3:
+    build: 
+      context: .
+      dockerfile: ./docker_files/web3/Dockerfile
+    ports:
+      - "5005:3000"

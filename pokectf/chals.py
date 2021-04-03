@@ -25,41 +25,106 @@ Warm-up challenge!
 Data: <a href="/static/pwn1">pwn1</a>
 Source: <a href="/static/pwn1.c">pwn1.c</a>
 
-nc www.cyanpencil.xyz 5006
+nc matrx.me 5001
 
 """,
-"flag": 'poke{w3ll..g0Od_j0b_I_gu35s}'
+"flag": 'poke{w3ll..g0Od_j0b_aga1n_I_gu35s}'
+})
+
+declare_chal({ "name": "Boring string",
+    "category": "pwn",
+    "score": 200,
+    "info": """
+
+I set up this printer service last week.
+Do not forget to specify the format!
+
+Data: <a href="/static/pwn2">pwn2</a>
+
+nc matrx.me 5002
+
+""",
+"flag": 'poke{I_h0p3_u_st1ll_l1k3_str1ngs_:)}'
 })
 
 
+declare_chal({ "name": "Simple crackme",
+    "category": "reverse",
+    "score": 100,
+    "info": """
+Data: <a href="/static/reverse1">reverse1</a>
+
+You shouldn't have trouble with this one...
+""",
+    "flag": 'poke{G0od_you_can_get_started_now}'
+})
+
+
+declare_chal({ "name": "No, crack-me!",
+    "category": "reverse",
+    "score": 200,
+    "info": """
+Data: <a href="/static/reverse2">reverse2</a>
+
+This flag-printing binary I just made is a bit slow.
+I wonder if you can optimize my code a bit?
+
+""",
+    "flag": 'poke{Th4t_w4s_n0t.hard_I-h0pe}'
+})
+
+declare_chal({ "name": "Simple Servers Real Fun",
+    "category": "web",
+    "score": 100, # TODO
+    "info": """
+Check out my new Redirect as a Service website! 
+
+Website: <a href="http://matrix.me:5003/">here</a>
+""",
+"flag": 'poke{th1s_w3b_w4s_fun?}'
+})
+
+declare_chal({ "name": "Pathological Liars",
+    "category": "web",
+    "score": 100, # TODO
+    "info": """
+If at once you don't solve a challenge, ask your parents to solve for you :D
+
+Website: <a href="http://matrix.me:5004/">here</a>
+""",
+"flag": 'poke{0h_y0ur_p4rents_d0nt_h4v3_4_fl4g?}'
+})
+
+declare_chal({ "name": "JSON, but not notation",
+    "category": "web",
+    "score": 100, # TODO
+    "info": """
+Given the amount of rickrolling, I'm fairly sure this site is broken in some way. So that means it should be easy to become an admin, right?
+
+Website: <a href="http://matrix.me:5005/">here</a>
+`index.js`: <a href="/static/web3/index.js">reverse1</a>
+`package.json`: <a href="/static/web3/package.json">reverse1</a>
+""",
+"flag": 'poke{S4V3_T3H_P0T0TYP3_WH4L3S}'
+})
+
+declare_chal({ "name": "The tweet",
+    "category": "misc",
+    "score": 100,
+    "info": """
+
+the <a href="/static/misc1/tweet.png">tweet</a>
+Recovering a full PEM Private Key when it is redacted.
+
+Flag: <a href="/static/misc1/flag.enc">here</a>
+
+""",
+"flag": 'poke{hey_there_some_custom_roms_use_this_key}'
+})
+
+
+
 # PokeCTF 2020
-
-# declare_chal({ "name": "Your first pwn",
-#     "category": "pwn",
-#     "score": 50,
-#     "info": """
-
-# Warm-up challenge!
-
-# Data: <a href="/static/pwn1">pwn1</a>
-# Source: <a href="/static/pwn1.c">pwn1.c</a>
-
-# nc www.cyanpencil.xyz 5006
-
-# """,
-# "flag": 'poke{w3ll..g0Od_j0b_I_gu35s}'
-# })
-
-# declare_chal({ "name": "Simple crackme",
-#     "category": "reverse",
-#     "score": 100,
-#     "info": """
-# Data: <a href="/static/reverse1">reverse1</a>
-
-# You shouldn't have trouble with this one...
-# """,
-#     "flag": 'poke{G0od_you_can_get_started_now}'
-# })
 
 # declare_chal({ "name": "RS-yAy!",
 #     "category": "crypto",
@@ -75,7 +140,6 @@ nc www.cyanpencil.xyz 5006
 # """,
 # "flag": 'poke{WHO_s4ys_maTh_has2b_H4rD?}'
 # })
-
 
 # declare_chal({ "name": "Flasky",
 #     "category": "web",
@@ -157,37 +221,6 @@ nc www.cyanpencil.xyz 5006
 # "flag": 'poke{Don\'t_f4ll_Down_tHOse_stairs}'
 # })
 
-
-
-# declare_chal({ "name": "No, crack-me!",
-#     "category": "reverse",
-#     "score": 200,
-#     "info": """
-# Data: <a href="/static/reverse2">reverse2</a>
-
-# This flag-printing binary I just made is a bit slow.
-# I wonder if you can optimize my code a bit?
-
-# """,
-#     "flag": 'poke{Th4t_w4s_n0t.hard_I-h0pe}'
-# })
-
-
-# declare_chal({ "name": "Boring string",
-#     "category": "pwn",
-#     "score": 200,
-#     "info": """
-
-# I set up this printer service last week.
-# Do not forget to specify the format!
-
-# Data: <a href="/static/pwn2">pwn2</a>
-
-# nc www.cyanpencil.xyz 5001
-
-# """,
-# "flag": 'poke{I_h0p3_u_l1k3_str1ngs_:)}'
-# })
 
 
 # declare_chal({ "name": "League",
