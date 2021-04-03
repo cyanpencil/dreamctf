@@ -73,6 +73,50 @@ I wonder if you can optimize my code a bit?
     "flag": 'poke{Th4t_w4s_n0t.hard_I-h0pe}'
 })
 
+declare_chal({ "name": "Newborn VM",
+    "category": "reverse",
+    "score": 50,
+    "info": """
+
+Get the <a href="/static/vm_reverse/newborn_vm.zip">newborn_vm</a>!
+
+""", # TODO
+    "flag": 'poke{n0_r3ving_n3cess4ry}'
+})
+
+declare_chal({ "name": "Baby VM",
+    "category": "reverse",
+    "score": 100,
+    "info": """
+
+Get the <a href="/static/vm_reverse/baby_vm.zip">baby_vm</a>!
+
+""", # TODO
+    "flag": 'poke{n0_jump1ng_n3cessary}'
+})
+
+declare_chal({ "name": "Kid VM",
+    "category": "reverse",
+    "score": 150,
+    "info": """
+
+Get the <a href="/static/vm_reverse/baby_vm.zip.zip">baby_vm.zip</a>!
+
+""", # TODO
+    "flag": 'poke{th1s_k1d_cant_sit_still_c0nstantly_jumping_4round}'
+})
+
+declare_chal({ "name": "Teen VM",
+    "category": "reverse",
+    "score": 200,
+    "info": """
+
+Get the <a href="/static/vm_reverse/teen_vm.zip">teen_vm</a>!
+
+""", # TODO
+    "flag": 'poke{st4ck_po1nter_g0_brrr}'
+})
+
 declare_chal({ "name": "Simple Servers Real Fun",
     "category": "web",
     "score": 100, # TODO
