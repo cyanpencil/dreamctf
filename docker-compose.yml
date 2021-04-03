@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  # Is the main system for poke, so do not change
+  main:
+    build: ./docker_files/main/
+    ports:
+      - "5000:5000"
+    volumes:
+      - type: bind
+        source: ./pokectf
+        target: /home/poke/pokectf
+  
+  # All challenges come here:
+  # pokectf_pwn2:
+  #   build: ./docker_files/pwn2/
+  #   ports:
+  #     - "5001:5001"

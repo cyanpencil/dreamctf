@@ -1,23 +1,27 @@
 #!/bin/bash
+cd /home/PokeCTF/pokectf2
 
-set -euxo pipefail
+docker-compose up -d
 
-cd $(dirname $0)
+# set -euxo pipefail
 
-docker="docker"
-[[ -x $(command -v podman) ]] && docker="podman"
+# cd $(dirname $0)
 
-[[ $(sudo $docker ps -q | wc -l) -ge 1 ]] && sudo $docker stop $(sudo $docker ps -q)
+# docker="docker"
+# [[ -x $(command -v podman) ]] && docker="podman"
 
-dbmount="$(pwd)/pokectf:/home/poke/pokectf"
+# [[ $(sudo $docker ps -q | wc -l) -ge 1 ]] && sudo $docker stop $(sudo $docker ps -q)
 
-# webserver
-sudo $docker build --file=./docker_files/main/Dockerfile -t pokectf:latest .
-sudo $docker run -v $dbmount -d -p 5000:5000 -it pokectf 
+# dbmount="$(pwd)/pokectf:/home/poke/pokectf"
+
+# # webserver
+# sudo $docker build --file=./docker_files/main/Dockerfile -t pokectf:latest .
+# sudo $docker run -v $dbmount -d -p 5000:5000 -it pokectf 
 #sudo $docker run -v $dbmount --net host -p 5000:5000 -it pokectf /bin/bash
 
 
 # challenges
+# IMPORTANT: all challenges are now started by docker compose, so you have to define them there.
 #sudo $docker build --file=./docker_files/pwn2/Dockerfile -t pokectf_pwn2:latest .
 #sudo $docker run -d -p 5001:5001 -it pokectf_pwn2
 #
