@@ -2,15 +2,17 @@
 {% block page_content %}
 {% if current_user.is_authenticated %} Hello, {{ current_user.username }}, your rank is {{ ranking }}. {% endif %}
 
+{% set r = gg('1') %} {% set rr = r*5 %} {% set rrr = r*55 %} {% set rrrr = r*12 %}
+{% set p = gg('0') %} 
 <table>
     <tr>
-        <td>+</td>
-        <td>-----</td>
-        <td>+</td>
-        <td>-------------------------------------------------------</td>
-        <td>+</td>
-        <td>------------</td>
-        <td>+</td>
+        <td>{{p}}</td>
+        <td>{{rr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrrr}}</td>
+        <td>{{p}}</td>
     </tr><tr>
         <td>|</td>
         <td>Rank</td>
@@ -20,13 +22,13 @@
         <td>Score</td>
         <td>|</td>
     </tr><tr>
-        <td>+</td>
-        <td>-----</td>
-        <td>+</td>
-        <td>-------------------------------------------------------</td>
-        <td>+</td>
-        <td>------------</td>
-        <td>+</td>
+        <td>{{p}}</td>
+        <td>{{rr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrrr}}</td>
+        <td>{{p}}</td>
     </tr>
     {% for user in users %}
     <tr>
@@ -40,13 +42,13 @@
     </tr>
     {% endfor %}
     <tr>
-        <td>+</td>
-        <td>-----</td>
-        <td>+</td>
-        <td>-------------------------------------------------------</td>
-        <td>+</td>
-        <td>------------</td>
-        <td>+</td>
+        <td>{{p}}</td>
+        <td>{{rr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrr}}</td>
+        <td>{{p}}</td>
+        <td>{{rrrr}}</td>
+        <td>{{p}}</td>
     </tr>
 </table>
 <form method="post" action="/"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}" /></form>

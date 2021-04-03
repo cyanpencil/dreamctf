@@ -1,0 +1,40 @@
+{% if not "welcome" in request.path %}
+
+<div class="text" style="display:inline;">
+<center>
+
+{% set s = gg('2') %}
+
+
+Look into yourself, you might find the following: <br/><br/>
+
+{{s}} <a href="{{ url_for('index') }}">				Home						</a> {{s}} <br/>
+{{s}} <a href="{{ url_for('challenges') }}">	Challenges			</a> {{s}} <br/>
+{{s}} <a href="{{ url_for('scoreboard') }}">	Scoreboard			</a> {{s}} <br/>
+{% if current_user.is_authenticated %}
+{{s}} <a href="{{ url_for('logout') }}">			Log Out					</a> {{s}} <br/>
+{% else %}
+{{s}} <a href="{{ url_for('register') }}">		Register				</a> {{s}} <br/>
+{{s}} <a href="{{ url_for('login') }}">				Log In					</a> {{s}} <br/>
+{% endif %} <br/>
+
+
+{% set sl = gg('7') %}
+
+{{ sl*41 }} {% if not current_user.is_authenticated %} {{ sl*9 }} {% endif %} <br/>
+
+<a href="{{ url_for('index') }}">				Home						</a> {{s}}  
+<a href="{{ url_for('challenges') }}">	Challenges			</a> {{s}}  
+<a href="{{ url_for('scoreboard') }}">	Scoreboard			</a> {{s}}
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('logout') }}">			Log Out					</a> 
+{% else %}
+<a href="{{ url_for('register') }}">		Register				</a> {{s}} 
+<a href="{{ url_for('login') }}">				Log In					</a>
+{% endif %} <br/>
+
+{{ sl*41 }} {% if not current_user.is_authenticated %} {{ sl*9 }} {% endif %} <br/>
+</center>
+</div>
+
+{%endif %}

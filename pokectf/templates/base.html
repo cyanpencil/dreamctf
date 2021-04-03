@@ -1,10 +1,12 @@
 {% set colors = gen_colors() %}
 {% set curtains = print_curtains() %}
 <style>
-pre {
+
+.text {
     margin: auto;
 		line-height: 1.1em;
-		text-shadow: 0 0 5px rgba(255,255,255,0.3);
+		text-shadow: 0 0 2px {{ colors[2] }}FF;
+		font-family: monospace;
 }
 
 .banner {
@@ -13,8 +15,8 @@ pre {
 		font-size: 1.0em;
 }
 
-.solved td:nth-child(2n) {
-	background-color: #bbffbb;
+.solved td:nth-child(2) {
+	background-color: {{ colors[1] }}33;
 }
 
 .grimes {
@@ -46,6 +48,7 @@ a:hover, a:active {
 a:link, a:visited {
 	color:{{ colors[1] }};
 	text-decoration:none;
+	text-shadow: 0 0 5px;
 }
 
 body  {
@@ -72,11 +75,12 @@ body  {
 
 <br/>
 
+{% include 'menu.html' %}
 
 
 
 <center>
-<pre>
+<pre class="text">
 {% block content %}{% block page_content %} {% endblock %}
 {% endblock %}
 </pre>

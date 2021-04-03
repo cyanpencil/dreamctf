@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
+{% set r = gg('1') %} {% set rr = r*25 %} {% set rrr = r*20 %} {% set rrrr = r*8 %}
+{% set p = gg('0') %} 
+
 {% block page_content %}
 Available challenges:
 
 <table>
 	<tr>
-		<td>+</td>
-		<td>-------------------------</td>
-		<td>+</td>
-		<td>--------------------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
+		<td>{{p}}</td>
+		<td>{{rr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
 	</tr><tr>
 		<td>|</td>
 		<td>Name</td>
@@ -25,15 +28,15 @@ Available challenges:
 		<td>Solves</td>
 		<td>|</td>
 	</tr><tr>
-		<td>+</td>
-		<td>-------------------------</td>
-		<td>+</td>
-		<td>--------------------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
+		<td>{{p}}</td>
+		<td>{{rr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
 	</tr>
 	{% for challenge in challenges %} 
 	{% set chall_id = challenge.id|string %}
@@ -50,15 +53,15 @@ Available challenges:
 		<td>|</td>
 	</tr>
 	<tr>
-		<td>+</td>
-		<td>-------------------------</td>
-		<td>+</td>
-		<td>--------------------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
-		<td>--------</td>
-		<td>+</td>
+		<td>{{p}}</td>
+		<td>{{rr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
+		<td>{{rrrr}}</td>
+		<td>{{p}}</td>
 	</tr>
 	{% endfor %}
 </table>

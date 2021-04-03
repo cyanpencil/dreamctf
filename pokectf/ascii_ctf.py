@@ -21,6 +21,7 @@ from flask_wtf.csrf import CsrfProtect
 import datetime
 import os
 import time
+import functools
 
 ################################
 #########   GLOBALS   ##########
@@ -48,7 +49,7 @@ login_manager.init_app(app)
 import curtains, color, grimes
 app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
 app.jinja_env.globals.update(gen_colors=color.randomScheme)
-app.jinja_env.globals.update(gatto=grimes.gg)
+app.jinja_env.globals.update(gg=grimes.gg)
 
 
 
@@ -142,6 +143,14 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 @app.route('/')
+def home():
+    return redirect(url_for('welcome'))
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 
@@ -160,7 +169,7 @@ def scoreboard():
         tx = time.mktime(x.lastSubmit.timetuple()) if x.lastSubmit else 0
         ty = time.mktime(y.lastSubmit.timetuple()) if y.lastSubmit else 0
         return int(ty - tx)
-    l = sorted(list(users), cmp=custom_order, reverse=True)
+    l = sorted(list(users), key=functools.cmp_to_key(custom_order), reverse=True)
     ranking = -1 if not current_user.is_authenticated else int(l.index(current_user)) + 1
     return render_template('scoreboard.html', users=l, ranking=ranking)
 

@@ -2,8 +2,8 @@ import random
 import math
 # must be up here due to the order things are used
 grimeTable = [
-  '#', # 0
-  '##@',
+  '#+¤x', # 0
+  '-:«»~~', # 1
   '##@@£¶',
   '#@£§&¤', # 3
   '@££$$§%%&*¤',
