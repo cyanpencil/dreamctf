@@ -1,0 +1,1 @@
+I really have to make this big enough so that it isn't obviously plaintext. Check out https://github.com/saltstack/salt/commit/5dd304276ba5745ec21fc1e6686a0b28da29e6fc and the related discussion, btw... poke{RSA_sh0uldn't_b3_t00_s4lty_3ith3r}

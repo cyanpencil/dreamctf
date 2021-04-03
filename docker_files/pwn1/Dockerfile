@@ -6,6 +6,6 @@ RUN useradd -m poke
 COPY pokectf/static/pwn1 /home/poke/pwn1
 RUN echo "poke{w3ll..g0Od_j0b_aga1n_I_gu35s}" > /home/poke/flag
 RUN chown poke -R /home/poke
-RUN chmod -w -R /home/poke
+RUN chmod u-w -R /home/poke
 EXPOSE 5006
 CMD su poke /bin/bash -c "cd;socat tcp-listen:5006,reuseaddr,fork exec:'/home/poke/pwn1'"

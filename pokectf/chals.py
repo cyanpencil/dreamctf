@@ -15,6 +15,17 @@ def declare_chal(data):
 
 # PokeCTF 2021
 
+declare_chal({ "name": "Sanity check",
+    "category": "misc",
+    "score": 25,
+    "info": """
+
+Look in the description of the announcement channel in the discord server for it!
+
+""",
+"flag": 'poke{sanity_ckeck_done!}'
+})
+
 declare_chal({ "name": "Your first pwn",
     "category": "pwn",
     "score": 50,
@@ -166,6 +177,63 @@ Flag: <a href="/static/misc1/flag.enc">here</a>
 "flag": 'poke{hey_there_some_custom_roms_use_this_key}'
 })
 
+# Robins interactive crypto
+# crypto1
+declare_chal({ "name": "Almost encryption standard",
+    "category": "reverse",
+    "score": 200, # TODO
+    "info": """
+
+I feel like I'm forgetting a few things. It's probably not important, just ship it!
+
+File: <a href="/static/almost_encryption_standard.py">here</a>
+Server connect with: nc matrx.me 5006
+
+""",
+    "flag": 'poke{s_4ffine_c1ph3r_y0u_g0t_th3r3?}'
+})
+# crypto2
+declare_chal({ "name": "Indigestion",
+    "category": "reverse",
+    "score": 200, # TODO
+    "info": """
+
+I had some bad food. Please help me digest it.
+
+File: <a href="/static/indigestion.py">here</a>
+Server connect with: nc matrx.me 5007
+
+""",
+    "flag": 'poke{pr31m4ge_r3s1st4nce_4m1rite}'
+})
+# crypto3
+declare_chal({ "name": "Bland RSA",
+    "category": "reverse",
+    "score": 200, # TODO
+    "info": """
+
+My RSA's been tasting a bit bland, lately.
+
+File: <a href="/static/crypto3_out.txt">here</a>
+
+""",
+    "flag": "poke{RSA_sh0uldn't_b3_t00_s4lty_3ith3r}"
+})
+
+# Interactive miscs
+# misc2
+declare_chal({ "name": "Boxed in",
+    "category": "misc",
+    "score": 150,
+    "info": """
+
+Box outside the think.
+
+nc matrx.me 5008
+
+""",
+"flag": 'poke{y0u_mu$t_r34l1ze_th3r3_1$_n0_b0x}'
+})
 
 
 # PokeCTF 2020

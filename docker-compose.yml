@@ -41,3 +41,21 @@ services:
       dockerfile: ./docker_files/web3/Dockerfile
     ports:
       - "5005:3000"
+  pokectf_crypto1:
+    build: 
+      context: .
+      dockerfile: ./docker_files/crypto1/Dockerfile
+    ports:
+      - "5006:5000"
+  pokectf_crypto2:
+    build: 
+      context: .
+      dockerfile: ./docker_files/crypto2/Dockerfile
+    ports:
+      - "5007:5000"
+  pokectf_misc2:
+    build: 
+      context: .
+      dockerfile: ./docker_files/misc2/Dockerfile
+    ports:
+      - "5008:5000"
