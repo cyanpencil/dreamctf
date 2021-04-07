@@ -59,3 +59,15 @@ services:
       dockerfile: ./docker_files/misc2/Dockerfile
     ports:
       - "5008:5000"
+  pokectf_pwn3:
+    build: 
+      context: .
+      dockerfile: ./docker_files/pwn3/Dockerfile
+    ports:
+      - "5009:5000"
+  pokectf_pwn4:
+    build: 
+      context: .
+      dockerfile: ./docker_files/pwn4/Dockerfile
+    ports:
+      - "5010:5010"

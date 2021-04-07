@@ -51,6 +51,7 @@ I set up this printer service last week.
 Do not forget to specify the format!
 
 Data: <a href="/static/pwn2">pwn2</a>
+Source: <a href="/static/pwn2.c">pwn2.c</a>
 
 nc matrx.me 5002
 
@@ -67,7 +68,7 @@ Data: <a href="/static/reverse1">reverse1</a>
 
 You shouldn't have trouble with this one...
 """,
-    "flag": 'poke{G0od_you_can_get_started_now}'
+    "flag": 'poke{s1mpl3_instructi0ns_r1ght?}'
 })
 
 
@@ -81,7 +82,7 @@ This flag-printing binary I just made is a bit slow.
 I wonder if you can optimize my code a bit?
 
 """,
-    "flag": 'poke{Th4t_w4s_n0t.hard_I-h0pe}'
+    "flag": 'poke{sl0w_4nd_st3ady_w1ns_the_r4ce}'
 })
 
 declare_chal({ "name": "newborn vm",
@@ -165,8 +166,8 @@ declare_chal({ "name": "JSON, but not notation",
 Given the amount of rickrolling, I'm fairly sure this site is broken in some way. So that means it should be easy to become an admin, right?
 
 Website: <a href="http://matrix.me:5005/">here</a>
-`index.js`: <a href="/static/web3/index.js">reverse1</a>
-`package.json`: <a href="/static/web3/package.json">reverse1</a>
+`index.js`: <a href="/static/web3/index.js">index.js</a>
+`package.json`: <a href="/static/web3/package.json">package.json</a>
 """,
 "flag": 'poke{S4V3_T3H_P0T0TYP3_WH4L3S}'
 })
@@ -188,7 +189,7 @@ Flag: <a href="/static/misc1/flag.enc">here</a>
 # Robins interactive crypto
 # crypto1
 declare_chal({ "name": "Almost encryption standard",
-    "category": "reverse",
+    "category": "crypto",
     "score": 200, # TODO
     "info": """
 
@@ -202,7 +203,7 @@ Server connect with: nc matrx.me 5006
 })
 # crypto2
 declare_chal({ "name": "Indigestion",
-    "category": "reverse",
+    "category": "crypto",
     "score": 200, # TODO
     "info": """
 
@@ -216,7 +217,7 @@ Server connect with: nc matrx.me 5007
 })
 # crypto3
 declare_chal({ "name": "Bland RSA",
-    "category": "reverse",
+    "category": "crypto",
     "score": 200, # TODO
     "info": """
 
@@ -243,6 +244,38 @@ nc matrx.me 5008
 "flag": 'poke{y0u_mu$t_r34l1ze_th3r3_1$_n0_b0x}'
 })
 
+#Some more pwn from robin
+# pwn3
+declare_chal({ "name": "Gotta go fast",
+    "category": "pwn",
+    "score": 200, # TODO
+    "info": """
+
+People keep volunteering to be tributes. I really think they should stop doing that, I've seen the management system get messed up by this.
+
+Data: <a href="/static/pwn3/pwn3_files.zip">pwn3_files.zip</a>
+
+nc matrx.me 5009
+
+""",
+"flag": 'poke{s4n1c_w1ns_th3_hung3r_g4m3SS!}'
+})
+
+# pwn4
+declare_chal({ "name": "Green shell",
+    "category": "pwn",
+    "score": 100, # TODO
+    "info": """
+
+The Green Shell is a launchable, which when launched from a player, will start moving. The shell takes 5 bounces on walls before it will break. This can be deadly to players ahead as they must dodge it. It is referred to players as the "worst" shell, mainly because it roams freely instead of targeting a player. The shell is green with black lines. 
+
+Data: <a href="/static/pwn4/pwn4_files.zip">pwn4_files.zip</a>
+
+nc matrx.me 5010
+
+""",
+"flag": "poke{1t's-4_m3_sh3llc0d10}"
+})
 
 # PokeCTF 2020
 
