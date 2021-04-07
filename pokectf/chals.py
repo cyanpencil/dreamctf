@@ -84,47 +84,55 @@ I wonder if you can optimize my code a bit?
     "flag": 'poke{Th4t_w4s_n0t.hard_I-h0pe}'
 })
 
-declare_chal({ "name": "Newborn VM",
+declare_chal({ "name": "newborn vm",
     "category": "reverse",
     "score": 50,
     "info": """
+Please help me find a pacifier, I cannot endure these screams any longer.
+Here, take it <a href="/static/vm_reverse/newborn_vm.zip">newborn_vm.zip</a> and hopefully I won't hear any more "poke..." screams.
 
-Get the <a href="/static/vm_reverse/newborn_vm.zip">newborn_vm</a>!
+<b>Note:</b> All four vm challenges use the same binary baby_vm.
+The only thing that changes is the code run by the vm.
+With each stage, you should probably reverse more and more of the binary.
+You only need to reverse a small portion (or maybe nothing at all ;) for the first stage.
 
 """, # TODO
     "flag": 'poke{n0_r3ving_n3cess4ry}'
 })
 
-declare_chal({ "name": "Baby VM",
+declare_chal({ "name": "baby vm",
     "category": "reverse",
     "score": 100,
     "info": """
-
-Get the <a href="/static/vm_reverse/baby_vm.zip">baby_vm</a>!
+Finally, some peace and quiet.
+Maybe a bit too quiet.
+Can you try and get them to say their first word?: <a href="/static/vm_reverse/baby_vm.zip">baby_vm.zip</a>!
 
 """, # TODO
     "flag": 'poke{n0_jump1ng_n3cessary}'
 })
 
-declare_chal({ "name": "Kid VM",
+declare_chal({ "name": "kid vm",
     "category": "reverse",
-    "score": 150,
+    "score": 200,
     "info": """
-
-Get the <a href="/static/vm_reverse/baby_vm.zip.zip">baby_vm.zip</a>!
+Barely able to walk and they just won't stop jumping around all over the place!
+Please help me calm them down: <a href="/static/vm_reverse/kid_vm.zip">kid_vm.zip</a>!
 
 """, # TODO
     "flag": 'poke{th1s_k1d_cant_sit_still_c0nstantly_jumping_4round}'
 })
 
-declare_chal({ "name": "Teen VM",
+declare_chal({ "name": "teen vm",
     "category": "reverse",
-    "score": 200,
+    "score": 300,
     "info": """
+Lazy teenagers, the only thing they do is sit around all day, CALLing each other.
+And don't even get me started on their slang! The only thing I understood was poke...
 
-Get the <a href="/static/vm_reverse/teen_vm.zip">teen_vm</a>!
+Maybe you can teach them some sense: <a href="/static/vm_reverse/teen_vm.zip">teen_vm.zip</a>!
 
-""", # TODO
+""",
     "flag": 'poke{st4ck_po1nter_g0_brrr}'
 })
 
