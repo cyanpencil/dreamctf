@@ -7,6 +7,8 @@ WTForms
 Werkzeug
 flask-admin
 flask_security
-enum
 tornado
 psycopg2-binary
+ez_setup
+email_validator
+gunicorn

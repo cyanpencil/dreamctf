@@ -1,0 +1,18 @@
+FROM ubuntu:latest
+ARG NAME=bland_rsa
+
+RUN apt update
+RUN apt install -y python3-pip python3-dev socat
+
+RUN useradd -m ${NAME}
+WORKDIR /home/${NAME}
+
+COPY . .
+RUN echo "poke{y0u_mu\$t_r34l1ze_th3r3_1\$_n0_b0x}" > /home/${NAME}/flag.txt
+RUN chown ${NAME} -R /home/${NAME}
+RUN chmod 333 -R /home/${NAME}
+
+USER ${NAME}
+
+EXPOSE 5000
+CMD ["./run.sh"]

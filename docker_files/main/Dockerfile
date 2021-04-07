@@ -1,7 +1,11 @@
-FROM ubuntu:latest
-RUN apt update
-RUN apt install -y python3-pip
-RUN pip3 install Flask Flask-Login Flask-SQLAlchemy Flask-WTF email_validator SQLAlchemy==1.3.23 WTForms Werkzeug flask-admin flask_security tornado psycopg2-binary 
-RUN useradd -m poke
+FROM python:3.8.1-slim-buster
+
+# set work directory
+WORKDIR /usr/src/app
+
+COPY /pokectf/requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r requirements.txt
+COPY /pokectf/ /usr/src/app/
+
 EXPOSE 5000
-CMD ["/bin/bash", "-c", "su poke bash -c 'cd ~/pokectf && python3 chals.py && python3 run.py'"]
+CMD [ "gunicorn", "--bind", "0.0.0.0:5000", "manage:app" ]

@@ -2,72 +2,119 @@ version: "3.3"
 services:
   # Is the main system for poke, so do not change
   main:
-    build: ./docker_files/main/
-    ports:
-      - "5000:5000"
-    volumes:
-      - type: bind
-        source: ./pokectf
-        target: /home/poke/pokectf
-  
-  # All challenges come here:
-  pokectf_pwn1:
     build:
       context: .
-      dockerfile: ./docker_files/pwn1/Dockerfile
+      dockerfile: ./docker_files/main/Dockerfile
     ports:
-      - "5001:5006"
-  pokectf_pwn2:
-    build: 
+      - "80:5000"
+    environment:
+      - DATABASE_URL=postgresql://poke:poke_naval_army_origin@db:5432/pokectf
+      - FLASK_APP=app/__init__.py
+      - FLASK_ENV=production
+    depends_on:
+      - db
+    networks:
+      - main
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=poke
+      - POSTGRES_PASSWORD=poke_naval_army_origin
+      - POSTGRES_DB=pokectf
+    networks:
+      - main
+  
+  # All challenges come here:
+  deadbeef:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/pwn2/Dockerfile
+      args:
+        NAME: deadbeef
+        FLAG: poke{sh0uld_h4ve_writt3n_it_1n_rust}
     ports:
-      - "5002:5001"
-  pokectf_web1:
-    build: 
+      - "5001:5000"
+  printer:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/web1/Dockerfile
+      args:
+        NAME: printer
+        FLAG: poke{s0_th4t's_why_th3y_alw4ys_br34k}
+    ports:
+      - "5002:5000"
+  real_fun:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
+      context: .
+      args:
+        NAME: real_fun
+        FLAG: poke{th1s_w3b_w4s_fun?}
     ports:
       - "5003:5000"
-  pokectf_web2:
-    build: 
+  liars:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/web2/Dockerfile
+      args:
+        NAME: liars
+        FLAG: poke{0h_y0ur_p4rents_d0nt_h4v3_4_fl4g?}
     ports:
       - "5004:5000"
-  pokectf_web3:
-    build: 
-      context: .
-      dockerfile: ./docker_files/web3/Dockerfile
+  json_notation:
+    build: ./docker_files/json_notation
     ports:
       - "5005:3000"
-  pokectf_crypto1:
-    build: 
+  indigestion:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/crypto1/Dockerfile
+      args:
+        NAME: indigestion
+        FLAG: poke{pr31m4ge_r3s1st4nce_4m1rite}
     ports:
       - "5006:5000"
-  pokectf_crypto2:
-    build: 
+  bland_rsa:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/crypto2/Dockerfile
+      args:
+        NAME: bland_rsa
+        FLAG: poke{RSA_sh0uldn't_b3_t00_s4lty_3ith3r}
     ports:
       - "5007:5000"
-  pokectf_misc2:
-    build: 
+  boxed_in:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/misc2/Dockerfile
+      args:
+        NAME: boxed_in
+        FLAG: poke{y0u_mu$$t_r34l1ze_th3r3_1$$_n0_b0x}
     ports:
       - "5008:5000"
-  pokectf_pwn3:
-    build: 
+  go_fast:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/pwn3/Dockerfile
+      args:
+        NAME: go_fast
+        FLAG: poke{s4n1c_w1ns_th3_hung3r_g4m3SS!}
     ports:
       - "5009:5000"
-  pokectf_pwn4:
-    build: 
+  green_shell:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
       context: .
-      dockerfile: ./docker_files/pwn4/Dockerfile
+      args:
+        NAME: green_shell
+        FLAG: poke{1t's-4_m3_sh3llc0d10}
     ports:
-      - "5010:5010"
+      - "5010:5000"
+volumes:
+  postgres_data:
+networks:
+  # main containers should be on a separate network!!!
+  main:
+  default:
