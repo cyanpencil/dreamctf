@@ -27,7 +27,7 @@ def hit_it():
 @app.route("/flag")
 def flag():
     if ipaddress.ip_address(flask.request.remote_addr).is_loopback:
-        return open("/home/poke/flag").read()
+        return open("flag.txt").read()
     else:
         return flask.redirect("https://youtu.be/dQw4w9WgXcQ")
 

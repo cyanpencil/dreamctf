@@ -47,7 +47,7 @@ services:
       - "5002:5000"
   real_fun:
     build:
-      dockerfile: ./docker_files/base/Dockerfile
+      dockerfile: ./docker_files/real_fun/Dockerfile
       context: .
       args:
         NAME: real_fun
@@ -56,7 +56,7 @@ services:
       - "5003:5000"
   liars:
     build:
-      dockerfile: ./docker_files/base/Dockerfile
+      dockerfile: ./docker_files/liars/Dockerfile
       context: .
       args:
         NAME: liars

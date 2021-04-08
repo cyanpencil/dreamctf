@@ -139,7 +139,7 @@ def create_update_chals():
         "info": """
     Check out my new Redirect as a Service website! 
 
-    Website: <a href="http://matrix.me:5003/">here</a>
+    Website: <a href="http://matrx.me:5003/">here</a>
     """,
     "flag": 'poke{th1s_w3b_w4s_fun?}'
     })
@@ -150,7 +150,7 @@ def create_update_chals():
         "info": """
     If at once you don't solve a challenge, ask your parents to solve for you :D
 
-    Website: <a href="http://matrix.me:5004/">here</a>
+    Website: <a href="http://matrx.me:5004/">here</a>
     """,
     "flag": 'poke{0h_y0ur_p4rents_d0nt_h4v3_4_fl4g?}'
     })
@@ -162,7 +162,7 @@ def create_update_chals():
     Given the amount of rickrolling, I'm fairly sure this site is broken in some way.
     So that means it should be easy to become an admin, right?
 
-    Website: <a href="http://matrix.me:5005/">here</a>
+    Website: <a href="http://matrx.me:5005/">here</a>
     Files: <a href="/static/web3/index.js">index.js</a> and <a href="/static/web3/package.json">package.json</a>
     """,
     "flag": 'poke{S4V3_T3H_P0T0TYP3_WH4L3S}'
