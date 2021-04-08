@@ -51,7 +51,7 @@ def index():
 
 @app.route('/challenges')
 def challenges():
-    challenges = Challenges.query.all().order_by(Challenges.id)
+    challenges = Challenges.query.order_by(Challenges.id).all()
     return render_template('challenges.html', challenges=challenges)
 
 @app.route('/scoreboard')
