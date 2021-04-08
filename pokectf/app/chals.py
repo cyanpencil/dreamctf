@@ -58,7 +58,7 @@ def create_update_chals():
 
     declare_chal({ "name": "Simple Instructions",
         "category": "reverse",
-        "score": 100,
+        "score": 50,
         "info": """
     Binary: <a href="/static/simple_instructions.zip">simple_instructions.zip</a>
 
@@ -70,7 +70,7 @@ def create_update_chals():
 
     declare_chal({ "name": "Slow and steady",
         "category": "reverse",
-        "score": 200,
+        "score": 100,
         "info": """
     Binary: <a href="/static/slow_and_steady.zip">slow_and_steady.zip</a>
 
@@ -157,7 +157,7 @@ def create_update_chals():
 
     declare_chal({ "name": "JSON, but not notation",
         "category": "web",
-        "score": 100, # TODO
+        "score": 200, # TODO
         "info": """
     Given the amount of rickrolling, I'm fairly sure this site is broken in some way.
     So that means it should be easy to become an admin, right?
