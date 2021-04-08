@@ -2,4 +2,3 @@ flask
 pygments
 nord_pygments
 requests
-sqlite3
