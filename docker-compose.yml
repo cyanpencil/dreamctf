@@ -112,6 +112,14 @@ services:
         FLAG: poke{1t's-4_m3_sh3llc0d10}
     ports:
       - "5010:5000"
+  simple_blog:
+    build:
+      dockerfile: ./docker_files/simple_blog/Dockerfile
+      context: .
+      args:
+        NAME: simple_blog
+    ports:
+      - "5011:80"
 volumes:
   postgres_data:
 networks:

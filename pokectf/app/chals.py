@@ -273,6 +273,20 @@ def create_update_chals():
     "flag": "poke{1t's-4_m3_sh3llc0d10}"
     })
 
+    # web aaron
+    declare_chal({
+        "name": "Hack me with HTML",
+        "score": 100,
+        "info": """
+        
+        I decided to write my own framework for blogs. Can you help me find vulnerabilities?
+
+        You can find it <a href="http://matrx.me:5011" target="_blank"></a>
+
+        """,
+        "flag": "poke{h0w_d1d_y0u_g3t_my_secr3t_pwd}"
+    })
+
     # PokeCTF 2020
 
     # declare_chal({ "name": "RS-yAy!",
