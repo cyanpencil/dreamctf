@@ -349,7 +349,7 @@ def create_update_chals():
     })
 
     declare_chal({
-        "name": "",
+        "name": "n % dumb for n = 100",
         "category": "pwn",
         "score": 200,
         "info": """
