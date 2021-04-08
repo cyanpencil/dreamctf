@@ -14,6 +14,7 @@ RUN echo ${FLAG} > /home/${NAME}/flag.txt
 RUN pip3 install -r requirements.txt
 RUN chown ${NAME} -R /home/${NAME}
 RUN chmod 555 -R /home/${NAME}
+RUN chmod 666 /home/${NAME}
 
 USER ${NAME}
 
