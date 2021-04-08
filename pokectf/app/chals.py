@@ -282,7 +282,7 @@ def create_update_chals():
         
         I decided to write my own framework for blogs. Can you help me find vulnerabilities?
 
-        You can find it <a href="http://matrx.me:5011" target="_blank"></a>
+        You can find it <a href="http://matrx.me:5011" target="_blank">here</a>.
 
         """,
         "flag": "poke{h0w_d1d_y0u_g3t_my_secr3t_pwd}"
