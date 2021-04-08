@@ -120,6 +120,15 @@ services:
         NAME: simple_blog
     ports:
       - "5011:80"
+  whats_db:
+    build:
+      dockerfile: ./docker_files/whats_db/Dockerfile
+      context: .
+      args:
+        NAME: whats_db
+        FLAG: poke{psych0l0g1c4l_ATTACHment_1ssu3s}
+    ports:
+      - "5012:5000"
 volumes:
   postgres_data:
 networks:

@@ -219,7 +219,7 @@ def create_update_chals():
 
     My RSA's been tasting a bit bland, lately.
 
-    File: <a href="/static/crypto3_out.txt">here</a>
+    File: <a href="/static/bland_rsa_out.txt">bland_rsa_out.txt</a>
 
     """,
         "flag": "poke{RSA_sh0uldn't_b3_t00_s4lty_3ith3r}"
@@ -286,6 +286,48 @@ def create_update_chals():
 
         """,
         "flag": "poke{h0w_d1d_y0u_g3t_my_secr3t_pwd}"
+    })
+
+    declare_chal({
+        "name": "New Technology",
+        "category": "crypto",
+        "score": 100,
+        "info": """
+
+        If it's not Windows New Technology, what else could NT stand for?
+
+        File: <a href="/static/new_technology.py">new_technology.py</a>
+        """,
+        "flag": "poke{Would_number_theory_be_new_technology?}"
+    })
+
+    declare_chal({
+        "name": "Optimal RSA",
+        "category": "crypto",
+        "score": 100,
+        "info": """
+
+        You're aware that textbook RSA is actually insecure, right?
+        So anyway, I applied some padding.
+        For even more security, I'm also using SHA512.
+
+        File: <a href="/static/optimal_rsa_out.txt">optimal_rsa_out.txt</a>
+        """,
+        "flag": "poke{single_primes_are_definitely_optimal}"
+    })
+
+    declare_chal({
+        "name": "What's a database",
+        "category": "web",
+        "score": 100,
+        "info": """
+
+        What's a database? Why don't you store actual information?
+        Why do I need to guess?
+
+        Website: <a href="http://matrx.me:5012/">here</a>
+        """,
+        "flag": "poke{psych0l0g1c4l_ATTACHment_1ssu3s}"
     })
 
     # PokeCTF 2020
