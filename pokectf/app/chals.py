@@ -276,6 +276,7 @@ def create_update_chals():
     # web aaron
     declare_chal({
         "name": "Hack me with HTML",
+        "category": "web",
         "score": 100,
         "info": """
         
