@@ -26,6 +26,7 @@ import functools
 from . import app, db, login_manager
 from .models import User, Challenges, user_score
 from .forms import *
+from .webhooks import *
 
 ################################
 ##########  ROUTES   ###########
@@ -78,6 +79,12 @@ def challenge(challenge_name):
             return "Ehi! You can't submit two times the same flag!"
         user.solved = user.solved + ',' + str(challenge.id)
         user.lastSubmit = datetime.datetime.utcnow()
+        name = user.username
+        chal_name = challenge.name
+        if challenge.solves == "0":
+            first_blood_hook(name, chal_name)
+        else:
+            solve_hook(name, chal_name)
         challenge.solves = str(int(challenge.solves) +1)
         db.session.commit()
         return "Well done, the flag is correct."
