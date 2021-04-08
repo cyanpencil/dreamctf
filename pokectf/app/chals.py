@@ -330,6 +330,40 @@ def create_update_chals():
         "flag": "poke{psych0l0g1c4l_ATTACHment_1ssu3s}"
     })
 
+    declare_chal({
+        "name": "syscall me maybe",
+        "category": "pwn",
+        "score": 100,
+        "info": """
+
+        I threw a binary in the well
+        Don't ask me, I'll never tell
+        I looked to you as it fell
+        And now you're in my way
+
+        Binary: <a href="/static/syscall_me_maybe">syscall_me_maybe</a>
+
+        Connect with: nc matrx.me 5013
+        """,
+        "flag": "poke{Here's_my_flag_sysc4ll_m3_m4yb3}"
+    })
+
+    declare_chal({
+        "name": "",
+        "category": "pwn",
+        "score": 200,
+        "info": """
+
+        They said something about maths, capitalism and conspiracies to exploit them.
+        I can't deal with crazy right now, so could you just quickly check it out for me?
+
+        Files (Binary and Source): <a href="/static/n_percent_dumb.zip">n_percent_dumb.zip</a>
+
+        Connect with: nc matrx.me 5014
+        """,
+        "flag": "poke{1_filt3r3d_the_f0rm4t_str1ing,_b0$$}"
+    })
+
     # PokeCTF 2020
 
     # declare_chal({ "name": "RS-yAy!",

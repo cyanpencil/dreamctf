@@ -129,6 +129,24 @@ services:
         FLAG: poke{psych0l0g1c4l_ATTACHment_1ssu3s}
     ports:
       - "5012:5000"
+  syscall:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
+      context: .
+      args:
+        NAME: syscall
+        FLAG: poke{Here's_my_flag_sysc4ll_m3_m4yb3}
+    ports:
+      - "5013:5000"
+  dumb:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
+      context: .
+      args:
+        NAME: dumb
+        FLAG: poke{1_filt3r3d_the_f0rm4t_str1ing,_b0$$$$}
+    ports:
+      - "5014:5000"
 volumes:
   postgres_data:
 networks:
