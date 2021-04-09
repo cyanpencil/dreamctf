@@ -165,7 +165,7 @@ def create_update_chals():
     Website: <a href="http://matrx.me:5005/">here</a>
     Files: <a href="/static/web3/index.js">index.js</a> and <a href="/static/web3/package.json">package.json</a>
     """,
-    "flag": 'poke{S4V3_T3H_P0T0TYP3_WH4L3S}'
+    "flag": 'poke{save_teh_prototype_whales}'
     })
 
     declare_chal({ "name": "The tweet",
