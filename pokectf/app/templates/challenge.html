@@ -1,9 +1,35 @@
 {% extends "base.html" %}
 
+{% set chlen = challenge.name|length %}
+{% set padding = 10 %}
+{% set hpad = (padding//2) - 1 %}
+{% set sinner = gg('2')*chlen %}
+{% set chname = ('<b><a>'+challenge.name+'</b></a>') |safe %}
+{% set w = gg('2') %}
+{% set w0 = gg('8') %}
+{% set w1 = gg('8') %}
+{% set w2 = gg('8') %}
+{% set w3 = gg('8') %}
+
 {% block page_content %}
-{{challenge.name}} ({{challenge.score}} points)
+{{ w0*(chlen//4) }}
+{{ w0*(chlen//2) }}
+{{ w*(hpad+1) + w0*chlen + w*(hpad+1) }}
+{{ w+w+' '*(chlen + padding - 2)+w+w }}
+{{ w2+' '+w2*3+' '+w*3+' '*(hpad)+chname+' '*(hpad)+w*3+' '+w2*3+' '+w2 }}
+{{ w+w+' '*(chlen + padding - 2)+w+w }}
+{{ w*(hpad+1) + w0*chlen + w*(hpad+1) }}
+{{ w0*(chlen//2) }}
+{{ w0*(chlen//4) }}
+
+
+{{ w2*4+'    ('+challenge.score+' points)    '+w2*4 }}
+
 {{challenge.info | safe }}
 {% if current_user.is_authenticated %}
+
+{{ gg('2') }}
+
 <form method="POST">{{ form.csrf_token }}
 Flag: {{ form.flag }}
 
@@ -12,5 +38,9 @@ Flag: {{ form.flag }}
 {% if form.errors %}{% for e in form.errors %}{% for m in form.errors[e] %}
  >> {{ m }}
 {% endfor %}{% endfor %}{% endif %}
-{% else %}Please log in to submit flags.{% endif %}
+{% else %}
+{{ gg('2') }}
+
+Please log in to submit flags.
+{% endif %}
 {% endblock %}

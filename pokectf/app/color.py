@@ -68,7 +68,7 @@ def rgbToHsv(r, g, b):
   mmax = max(r, g, b)
   v = mmax
   delta = mmax - mmin
-  h, s = 0
+  h, s = 0, 0
 
   # darkness is an edge case
   if (mmax <= 0 or delta < 0.0001):
@@ -88,11 +88,11 @@ def rgbToHsv(r, g, b):
   return [h, s, v]
 
 def fromHexNotation(hex):
-  if (hex.startsWith('#')):
-    hex = hex.substr(1)
-  r = parseInt(hex.substr(0, 2), 16)
-  g = parseInt(hex.substr(2, 2), 16)
-  b = parseInt(hex.substr(4, 2), 16)
+  if (hex.startswith('#')):
+    hex = hex[1:]
+  r = int(hex[0:2], 16)
+  g = int(hex[2:4], 16)
+  b = int(hex[4:6], 16)
   return [r, g, b]
 
 
@@ -144,3 +144,64 @@ def randomScheme():
 def schemeFromHex(hex):
   return generateFullScheme(*variation(*rgbToHsv(*fromHexNotation(hex))))
 
+def gen_colors():
+  c = randomScheme()
+
+  def anglediff(a1, a2):
+    return 180 - abs(abs(a1 - a2) - 180); 
+
+  wanted_hue = rgbToHsv(*fromHexNotation(c[2]))[0]
+  best, bestvalue = 99999999, 99999999999
+  for fname, color in poke_color.items():
+    if anglediff(wanted_hue, color) < best:
+      best = anglediff(wanted_hue, color)
+      selected = fname
+      print("selected ", fname, " with bestvalue ", bestvalue)
+
+  return [*c, selected.split("_")[0]]
+
+
+
+
+
+import os, math
+directory = "templates/banners/"
+selected = "poke23_0.html"
+poke_color = {}
+for filename in os.listdir(directory):
+  if ".html" not in filename:
+    continue
+  with open(directory + filename, "r") as f:
+    t = f.read()
+    rgbs = t.split("rgb(")[1:]
+    lengths = []
+    for line in rgbs:
+      i, j = line.find(">"), line.find("<")
+      lengths += [j - i - 1]
+    t = list(map(lambda x: x.split(")")[0], t.split("rgb(")[1:]))
+    tt = [list(map(int, x.split(','))) for x in t]
+    hh, ss, vv = [], [], []
+    sk = []
+    for length, t in zip(lengths, tt):
+      h, s, v = rgbToHsv(t[0], t[1], t[2])
+      if s < 0.10:
+        continue
+      hh += [h]*length
+      ss += [s]*length
+      vv += [v]*length
+      sk += [(h*s*v, h)]*length
+      # for x in range((length)):
+        # print("%2x %2x %2x %f %f" % (int(t[0]), int(t[1]), int(t[2]), h, s))
+
+
+    x = list(map(lambda x: math.cos(x*3.1415/180), hh))
+    y = list(map(lambda x: math.sin(x*3.1415/180), hh))
+
+    def median(a):
+      # return sorted(a)[len(a)//2]
+      return sum(a)/len(a)
+
+    angle = math.atan2(median(y), median(x))*180.0 / 3.1415
+    final = angle if angle > 0 else angle + 360.0
+    poke_color[filename] = final
+    # poke_color[filename] = sorted(sk)[len(sk)//2][1]

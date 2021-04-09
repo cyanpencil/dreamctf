@@ -3,14 +3,14 @@
 {% set poke_no = range(1,41)|random()|string %}
 {% set poke_style = range(0,3)|random()|string %}
 
+{% if not "welcome" in request.path %}
 <center>
 <pre class="banner">
-{#
-{% include "banners/poke" + poke_no + "_" + poke_style + ".html" %}
-#}
+{% include "banners/" + colors[4] + "_" + poke_style + ".html" %}
 
 </pre>
 </center>
+{% else %}
 <center>
 <!--88d888b.          dP                MM'""""'YMM M""""""""M MM""""""""`M -->
 <!--88'  `88          88                M' .mmm. `M Mmmm  mmmM MM  mmmmmmmM -->
@@ -56,3 +56,4 @@
 			 ########     ###     ###                                  
 </pre>
 </center>
+{% endif %}
