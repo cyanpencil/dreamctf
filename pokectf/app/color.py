@@ -172,13 +172,13 @@ for filename in os.listdir(directory):
     continue
   with open(directory + filename, "r") as f:
     t = f.read()
-    rgbs = t.split("rgb(")[1:]
+    rgbs = t.split("color:#")[1:]
     lengths = []
     for line in rgbs:
       i, j = line.find(">"), line.find("<")
       lengths += [j - i - 1]
-    t = list(map(lambda x: x.split(")")[0], t.split("rgb(")[1:]))
-    tt = [list(map(int, x.split(','))) for x in t]
+    t = list(map(lambda x: x.split(";")[0], rgbs))
+    tt = [[int(x[:2],16),int(x[2:4],16),int(x[4:],16)] for x in t]
     hh, ss, vv = [], [], []
     sk = []
     for length, t in zip(lengths, tt):

@@ -76,7 +76,6 @@ def zigzagCurtains ():
             if (bias < -1): bias = -1
         zag += '' + str(digit)
     zag += zag
-    print(zag)
 
     z_maxIns = thisTime - curtain_len # curtains are 10 wide
     z_dirindex = Math.floor(random.random() * z_maxIns)
