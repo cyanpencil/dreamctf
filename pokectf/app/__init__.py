@@ -48,7 +48,7 @@ login_manager.init_app(app)
 ################################
 from . import curtains, grimes, color
 app.jinja_env.globals.update(print_curtains=curtains.print_curtains)
-app.jinja_env.globals.update(gen_colors=color.randomScheme)
+app.jinja_env.globals.update(gen_colors=color.gen_colors)
 app.jinja_env.globals.update(gg=grimes.gg)
 
 from . import routes

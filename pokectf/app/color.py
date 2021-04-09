@@ -156,7 +156,6 @@ def gen_colors():
     if anglediff(wanted_hue, color) < best:
       best = anglediff(wanted_hue, color)
       selected = fname
-      print("selected ", fname, " with bestvalue ", bestvalue)
 
   return [*c, selected.split("_")[0]]
 
@@ -165,7 +164,7 @@ def gen_colors():
 
 
 import os, math
-directory = "templates/banners/"
+directory = "app/templates/banners/"
 selected = "poke23_0.html"
 poke_color = {}
 for filename in os.listdir(directory):
@@ -190,8 +189,6 @@ for filename in os.listdir(directory):
       ss += [s]*length
       vv += [v]*length
       sk += [(h*s*v, h)]*length
-      # for x in range((length)):
-        # print("%2x %2x %2x %f %f" % (int(t[0]), int(t[1]), int(t[2]), h, s))
 
 
     x = list(map(lambda x: math.cos(x*3.1415/180), hh))
