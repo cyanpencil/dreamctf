@@ -2,7 +2,15 @@ from . import app
 import requests
 
 role_mappings = {
-    "Challenge Creators": "829438730192027703"
+    "Challenge Creators": "829438730192027703",
+    "Werediscs": "830191378951569428",
+    "FTCekoP": "830191390314201150",
+    "anti haxxers": "830191403137105930",
+    "Almond Butter Banana Ananas": "830191414754410527",
+    "carbonara": "830191426641330228",
+    "Show Me Your Dance": "830191438288519179",
+    "no aspe dai": "830191451395981363",
+    "Cyberdawgs": "830191462867009537"
 }
 
 def execute_webhook(url, message):
