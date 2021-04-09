@@ -3,6 +3,7 @@ import math as Math
 from . import grimes, cellular
 
 curtain_len = 20
+curtain_height = 120
 
 def curtainsFor(key):
     if (key == 'none' or key == 'no'):
@@ -133,7 +134,7 @@ def print_curtains():
     # lambdata = cellularCurtains()
     lambdata = randomCurtains()
     l, r = "", ""
-    for i in range(80):
+    for i in range(curtain_height):
         a, b = lambdata(grimer)
         l += a + "<br/>"
         r += b + "<br/>"

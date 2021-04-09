@@ -19,25 +19,31 @@
 	background-color: {{ colors[1] }}33;
 }
 
+.content {
+
+}
+
 .grimes {
 	color: {{ colors[2] }};
-	font: 15px monospace;
+	#font: 15px monospace;
+	font-family: monospace;
 	margin: 10px;
 	align-self: stretch;
 	background: linear-gradient(to right, {{ colors[2] }}00 , {{ colors[2] }}ff);
 	color: transparent;
+	-webkit-background-clip: text;
 	background-clip: text;
 }
 .gright {
 	background: linear-gradient(to left, {{ colors[2] }}00 , {{ colors[2] }}ff);
 	background-clip: text;
+	-webkit-background-clip: text;
 }
 
 .master {
 	display: flex;
-	align-items: center;
-	margin: auto;
 	justify-content: center;
+	margin:auto;
 }
 
 a:hover, a:active {
@@ -56,7 +62,7 @@ body  {
 	position: relative;
 	color: {{ colors[0] }};
 	font-size: 15px;
-	min-width: 1500px;
+	min-width: 1200px;
 }
 </style>
 <body>
@@ -67,7 +73,7 @@ body  {
 <div class="grimes gleft" style="text-align:right">
 {{ curtains[0]|safe }}
 </div>
-<div style="width:900px;">
+<div class="content">
 
 
 {% include 'header.html' %}
@@ -87,7 +93,7 @@ body  {
 </center>
 
 </div>
-<div class="grimes gright" style="width:200px">
+<div class="grimes gright">
 {{ curtains[1]|safe }}
 </div>
 </div>

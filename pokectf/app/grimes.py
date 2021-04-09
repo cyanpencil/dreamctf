@@ -47,5 +47,3 @@ def gg(string):
         out += unstableGrimes(int(string[i]))
     return out
 
-
-print(randomGrimer()(3))
