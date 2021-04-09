@@ -135,7 +135,7 @@ def create_update_chals():
 
     declare_chal({ "name": "Simple Servers Real Fun",
         "category": "web",
-        "score": 100, # TODO
+        "score": 150,
         "info": """
     Check out my new Redirect as a Service website! 
 
@@ -146,7 +146,7 @@ def create_update_chals():
 
     declare_chal({ "name": "Pathological Liars",
         "category": "web",
-        "score": 100, # TODO
+        "score": 100,
         "info": """
     If at once you don't solve a challenge, ask your parents to solve for you :D
 
@@ -157,7 +157,7 @@ def create_update_chals():
 
     declare_chal({ "name": "JSON, but not notation",
         "category": "web",
-        "score": 200, # TODO
+        "score": 200,
         "info": """
     Given the amount of rickrolling, I'm fairly sure this site is broken in some way.
     So that means it should be easy to become an admin, right?
@@ -186,7 +186,7 @@ def create_update_chals():
     # crypto1
     declare_chal({ "name": "Almost encryption standard",
         "category": "crypto",
-        "score": 200, # TODO
+        "score": 250,
         "info": """
 
     I feel like I'm forgetting a few things. It's probably not important, just ship it!
@@ -200,7 +200,7 @@ def create_update_chals():
     # crypto2
     declare_chal({ "name": "Indigestion",
         "category": "crypto",
-        "score": 200, # TODO
+        "score": 150,
         "info": """
 
     I had some bad food. Please help me digest it.
@@ -214,7 +214,7 @@ def create_update_chals():
     # crypto3
     declare_chal({ "name": "Bland RSA",
         "category": "crypto",
-        "score": 200, # TODO
+        "score": 100,
         "info": """
 
     My RSA's been tasting a bit bland, lately.
@@ -244,7 +244,7 @@ def create_update_chals():
     # pwn3
     declare_chal({ "name": "Gotta go fast",
         "category": "pwn",
-        "score": 200, # TODO
+        "score": 200,
         "info": """
 
     People keep volunteering to be tributes. I really think they should stop doing that, I've seen the management system get messed up by this.
@@ -260,7 +260,7 @@ def create_update_chals():
     # pwn4
     declare_chal({ "name": "Green shell",
         "category": "pwn",
-        "score": 100, # TODO
+        "score": 50,
         "info": """
 
     The Green Shell is a launchable, which when launched from a player, will start moving. The shell takes 5 bounces on walls before it will break. This can be deadly to players ahead as they must dodge it. It is referred to players as the "worst" shell, mainly because it roams freely instead of targeting a player. The shell is green with black lines. 
@@ -291,7 +291,7 @@ def create_update_chals():
     declare_chal({
         "name": "New Technology",
         "category": "crypto",
-        "score": 100,
+        "score": 150,
         "info": """
 
         If it's not Windows New Technology, what else could NT stand for?
@@ -304,7 +304,7 @@ def create_update_chals():
     declare_chal({
         "name": "Optimal RSA",
         "category": "crypto",
-        "score": 100,
+        "score": 150,
         "info": """
 
         You're aware that textbook RSA is actually insecure, right?
@@ -319,7 +319,7 @@ def create_update_chals():
     declare_chal({
         "name": "What's a database",
         "category": "web",
-        "score": 100,
+        "score": 200,
         "info": """
 
         What's a database? Why don't you store actual information?
@@ -367,7 +367,7 @@ def create_update_chals():
     declare_chal({
         "name": "Too Smoll",
         "category": "crypto",
-        "score": 100,
+        "score": 200,
         "info": """
 
         Can you solve this for me?
@@ -382,7 +382,7 @@ def create_update_chals():
     declare_chal({
         "name": "Unfriendly RSA",
         "category": "crypto",
-        "score": 100,
+        "score": 150,
         "info": """
 
         So I heard of this great encryption scheme known as textbook RSA.
