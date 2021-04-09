@@ -144,20 +144,20 @@ def randomScheme():
 def schemeFromHex(hex):
   return generateFullScheme(*variation(*rgbToHsv(*fromHexNotation(hex))))
 
-def gen_colors():
-  c = randomScheme()
+# def gen_colors():
+  # c = randomScheme()
 
-  def anglediff(a1, a2):
-    return 180 - abs(abs(a1 - a2) - 180); 
+  # def anglediff(a1, a2):
+    # return 180 - abs(abs(a1 - a2) - 180); 
 
-  wanted_hue = rgbToHsv(*fromHexNotation(c[2]))[0]
-  best, bestvalue = 99999999, 99999999999
-  for fname, color in poke_color.items():
-    if anglediff(wanted_hue, color) < best:
-      best = anglediff(wanted_hue, color)
-      selected = fname
+  # wanted_hue = rgbToHsv(*fromHexNotation(c[2]))[0]
+  # best, bestvalue = 99999999, 99999999999
+  # for fname, color in poke_color.items():
+    # if anglediff(wanted_hue, color) < best:
+      # best = anglediff(wanted_hue, color)
+      # selected = fname
 
-  return [*c, selected.split("_")[0]]
+  # return [*c, selected.split("_")[0]]
 
 
 
@@ -168,7 +168,7 @@ directory = "app/templates/banners/"
 selected = "poke23_0.html"
 poke_color = {}
 for filename in os.listdir(directory):
-  if ".html" not in filename:
+  if "_0.html" not in filename:
     continue
   with open(directory + filename, "r") as f:
     t = f.read()
@@ -190,15 +190,106 @@ for filename in os.listdir(directory):
       vv += [v]*length
       sk += [(h*s*v, h)]*length
 
-
-    x = list(map(lambda x: math.cos(x*3.1415/180), hh))
-    y = list(map(lambda x: math.sin(x*3.1415/180), hh))
-
     def median(a):
       # return sorted(a)[len(a)//2]
       return sum(a)/len(a)
 
-    angle = math.atan2(median(y), median(x))*180.0 / 3.1415
-    final = angle if angle > 0 else angle + 360.0
+    # x = list(map(lambda x: math.cos(x*3.1415/180), hh))
+    # y = list(map(lambda x: math.sin(x*3.1415/180), hh))
+
+
+    # angle = math.atan2(median(y), median(x))*180.0 / 3.1415
+    # final = angle if angle > 0 else angle + 360.0
+    # poke_color[filename] = final
+
+
+
+
+#############################333
+
+    NBINS = [2, 4, 6, 8, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60]
+    def bbbins(a, idx=0):
+      if idx >= len(NBINS):
+          return median(a)
+      nbins = NBINS[idx]
+      binstep = 360/nbins
+      bins = [ [] for i in range(nbins) ]
+      for x in a:
+        bins[ math.floor(x/binstep) ] += [x]
+      maxb = 0
+      for i,b in enumerate(bins):
+        if len(b) > len(bins[maxb]):
+          maxb = i
+      return bbbins(bins[maxb], idx+1)
+      
+    def dominant(hhh,sss,vvv):
+      dd = {}
+      for h,s,v in zip(hhh,sss,vvv):
+        xx = f'{h:.2f}x{s:.2f}x{v:.2f}'
+        if xx in dd:
+          dd[xx] += 1
+        else:
+          dd[xx] = 1
+      best, bestv = '',0
+      for k in dd:
+        v = dd[k]
+        if v > bestv:
+          bestv = v
+          best = k
+      return [ float(x) for x in best.split('x') ]
+
+
+    def dominantbins(hhh,sss,vvv):
+      def hdist(a,b):
+        d = abs(a-b)
+        return min(d,360-d)
+      hh_center = bbbins(hhh)
+      RANGE = 20
+      dd = {}
+      for h,s,v in zip(hhh,sss,vvv):
+        if hdist(h,hh_center) > RANGE:
+          continue
+        xx = f'{h:.2f}x{s:.2f}x{v:.2f}'
+        if xx in dd:
+          dd[xx] += 1
+        else:
+          dd[xx] = 1
+      dfg = sorted(dd.items(),reverse=True)[:10]
+      hh,ss,vv = [],[],[]
+      for k,l in dfg:
+        h,s,v = [float(x) for x in k.split('x') ]
+        hh += [h]*l
+        ss += [s]*l
+        vv += [v]*l
+
+      return [ bbbins(hh), bbbins(ss), bbbins(vv) ]
+
+
+
+    # angle = math.atan2(bbbins(y), bbbins(x))*180.0 / 3.1415
+    # final = angle % 360.0
+    # final = [ bbbins(hh), bbbins(ss), bbbins(vv) ]
+    final = dominantbins(hh,ss,vv)
+    # print(final)
+    assert( final[0] >=0 and final[0] <= 360)
+    assert( final[1] >=0 and final[1] <= 1)
+    assert( final[2] >=0 and final[2] <= 1)
     poke_color[filename] = final
     # poke_color[filename] = sorted(sk)[len(sk)//2][1]
+
+
+
+
+
+def gen_colors():
+  pokeidx = random.randint(1,151)
+  h,s,v = poke_color[f'poke{pokeidx}_0.html']
+  # c = generateFullScheme(*variation(h,s,v))
+  s = (s*0.4) + 0.1
+  v = (v*0.2) + 0.6
+  # s = floatBetween(0.1, 0.5)
+  # v = floatBetween(0.6, 0.8)
+
+  c = generateFullScheme(h / 360.,s,v)
+
+  return [*c, f'poke{pokeidx}']
