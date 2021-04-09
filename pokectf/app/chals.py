@@ -351,7 +351,7 @@ def create_update_chals():
     declare_chal({
         "name": "n % dumb for n = 100",
         "category": "pwn",
-        "score": 200,
+        "score": 300,
         "info": """
 
         They said something about maths, capitalism and conspiracies to exploit them.
@@ -362,6 +362,38 @@ def create_update_chals():
         Connect with: nc matrx.me 5014
         """,
         "flag": "poke{1_filt3r3d_the_f0rm4t_str1ing,_b0$$}"
+    })
+
+    declare_chal({
+        "name": "Too Smoll",
+        "category": "crypto",
+        "score": 100,
+        "info": """
+
+        Can you solve this for me?
+        I'll give you the leftovers from my chinese food if you do...
+
+        Files: <a href="/static/too_smoll.zip">too_smoll.zip</a>
+
+        """,
+        "flag": "poke{l1k3_a_l1ttl3_puppy}"
+    })
+
+    declare_chal({
+        "name": "Unfriendly RSA",
+        "category": "crypto",
+        "score": 100,
+        "info": """
+
+        So I heard of this great encryption scheme known as textbook RSA.
+        My teacher told my that finding big prime numbers is expensive though, and I needed two keys.
+        So I just use the same modulus again, but with a different public exponent.
+        That shouldn't be a problem, right?
+
+        File: <a href="/static/unfriendly_rsa.py">unfriendly_rsa.py</a>
+
+        """,
+        "flag": "poke{a_pl41n_squ4r3_r00t_you_say?}"
     })
 
     # PokeCTF 2020
