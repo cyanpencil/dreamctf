@@ -20,7 +20,7 @@ def xor(a, b):
 
 def H(m):
     assert len(m) % BLOCKLEN == 0
-    state = S(b"ictf{_initial0_}"[::-1])
+    state = S(b"poke{_initial0_}"[::-1])
     assert len(state) == BLOCKLEN
     for b in blocks(m):
         state = S(xor(state, b))
