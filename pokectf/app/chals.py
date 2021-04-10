@@ -196,7 +196,7 @@ def create_update_chals():
     Connect with: nc matrx.me 5007
 
     """,
-        "flag": 'poke{th4t\'s_4ffine_c1ph3r_y0u_g0t_th3r3?}'
+        "flag": 'poke{th4t\'s_affine_c1ph3r_you_g0t_there}'
     })
     # crypto2
     declare_chal({ "name": "Indigestion",
