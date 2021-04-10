@@ -248,7 +248,8 @@ def create_update_chals():
         "score": 200,
         "info": """
 
-    People keep volunteering to be tributes. I really think they should stop doing that, I've seen the management system get messed up by this.
+    People keep volunteering to be tributes.
+    I really think they should stop doing that, I've seen the management system get messed up by this.
 
     Data: <a href="/static/gotta_go_fast.zip">gotta_go_fast.zip</a>
 
@@ -264,7 +265,11 @@ def create_update_chals():
         "score": 50,
         "info": """
 
-    The Green Shell is a launchable, which when launched from a player, will start moving. The shell takes 5 bounces on walls before it will break. This can be deadly to players ahead as they must dodge it. It is referred to players as the "worst" shell, mainly because it roams freely instead of targeting a player. The shell is green with black lines. 
+    The Green Shell is a launchable, which when launched from a player, will start moving.
+    The shell takes 5 bounces on walls before it will break.
+    This can be deadly to players ahead as they must dodge it.
+    It is referred to players as the "worst" shell, mainly because it roams freely instead of targeting a player.
+    The shell is green with black lines. 
 
     Data: <a href="/static/green_shell.zip">green_shell.zip</a>
 
