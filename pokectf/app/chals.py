@@ -18,7 +18,8 @@ def create_update_chals():
         "score": 25,
         "info": """
 
-    Look in the description of the announcement channel in the discord server for it!
+    Follow the rules and you might get rewarded!
+    (Look in #rules on discord.)
 
     """,
     "flag": 'poke{k33p_y0ur_s4nity!}'
