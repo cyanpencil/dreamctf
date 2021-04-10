@@ -396,6 +396,22 @@ def create_update_chals():
         "flag": "poke{a_pl41n_squ4r3_r00t_you_say?}"
     })
 
+    declare_chal({
+        "name": "parrot 2",
+        "category": "misc",
+        "score": 150,
+        "info": """
+
+        We caught a very smart parrot.
+        Try talking to him, but it looks like he's a bit too smart,
+        maybe there's something fishy going on!
+
+        Add @parrot2_poke_bot on Telegram: <a href="https://t.me/parrot2_poke_bot">add me</a>
+
+        """,
+        "flag": "poke{verba_manent_script4_v0l4nt}"
+    })
+
     # PokeCTF 2020
 
     # declare_chal({ "name": "RS-yAy!",
