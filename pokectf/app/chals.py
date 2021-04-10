@@ -193,10 +193,10 @@ def create_update_chals():
     I feel like I'm forgetting a few things. It's probably not important, just ship it!
 
     File: <a href="/static/almost_encryption_standard.py">here</a>
-    Connect with: nc matrx.me 5006
+    Connect with: nc matrx.me 5007
 
     """,
-        "flag": 'poke{s_4ffine_c1ph3r_y0u_g0t_th3r3?}'
+        "flag": 'poke{th4t\'s_4ffine_c1ph3r_y0u_g0t_th3r3?}'
     })
     # crypto2
     declare_chal({ "name": "Indigestion",

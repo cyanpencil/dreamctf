@@ -76,15 +76,15 @@ services:
         FLAG: poke{pr31m4ge_r3s1st4nce_4m1rite}
     ports:
       - "5006:5000"
-  # bland_rsa:
-  #   build:
-  #     dockerfile: ./docker_files/base/Dockerfile
-  #     context: .
-  #     args:
-  #       NAME: bland_rsa
-  #       FLAG: poke{RSA_sh0uldn't_b3_t00_s4lty_3ith3r}
-  #   ports:
-  #     - "5007:5000"
+  aes:
+    build:
+      dockerfile: ./docker_files/base/Dockerfile
+      context: .
+      args:
+        NAME: aes
+        FLAG: poke{th4t's_affine_c1ph3r_you_g0t_there}
+    ports:
+      - "5007:5000"
   boxed_in:
     build:
       dockerfile: ./docker_files/base/Dockerfile
