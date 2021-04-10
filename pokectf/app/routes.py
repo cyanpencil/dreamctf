@@ -27,6 +27,9 @@ from . import app, db, login_manager
 from .models import User, Challenges, user_score
 from .forms import *
 from .webhooks import *
+import time
+
+CTF_END = 1618079400
 
 ################################
 ##########  ROUTES   ###########
@@ -77,6 +80,8 @@ def challenge(challenge_name):
         user = User.query.filter_by(username=current_user.username).first()
         if str(challenge.id) in user.solved.split(","):
             return "Ehi! You can't submit two times the same flag!"
+        if time.time() >= CTF_END:
+            return "CTF is over!"
         user.solved = user.solved + ',' + str(challenge.id)
         user.lastSubmit = datetime.datetime.utcnow()
         name = user.username
