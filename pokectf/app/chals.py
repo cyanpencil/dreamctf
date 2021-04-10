@@ -207,7 +207,7 @@ def create_update_chals():
     I had some bad food. Please help me digest it.
 
     File: <a href="/static/indigestion.py">here</a>
-    Connect with: nc matrx.me 5007
+    Connect with: nc matrx.me 5006
 
     """,
         "flag": 'poke{pr31m4ge_r3s1st4nce_4m1rite}'
