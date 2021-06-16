@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./docker_files/main/Dockerfile
     ports:
-      - "80:5000"
+      - "8000:5000"
     environment:
       - DATABASE_URL=postgresql://poke:poke_naval_army_origin@db:5432/pokectf
       - FLASK_APP=app/__init__.py

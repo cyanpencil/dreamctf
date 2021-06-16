@@ -1,6 +1,19 @@
 
 
-PLACEHOLDER
+Instructions:
+
+for basic usage, (no challenges will be up)
+
+`sudo docker-compose up main db`
+
+then, enter into container `pokectf2_main`
+
+and go to /usr/src/app/
+
+and run `python manage.py create_db`
+and then `python manage.py update_chals`
+
+and you're good to go! (on port 8000 of localhost)
 
 
 
