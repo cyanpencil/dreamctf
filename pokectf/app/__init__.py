@@ -32,7 +32,7 @@ MIN_SCORE = 20
 RATE_SCORE = 2
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = b'\xd2\xa9\xd3\xad\x18\xb4\x13\xf1o\xed\x1aY\xd8G\x806'
+app.config["SECRET_KEY"] = os.getenv('SECRET_KEY', 'for dev')
 app.config["SECURITY_PASSWORD_SALT"] = '1987000500676'
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite')
 app.config["FIRST_BLOOD_WEBHOOK"] = "https://discord.com/api/webhooks/829751917441581067/RLsUYFLz_jiCkyvKHSfAOatJ0KgdHJSercQtl-H4Tr9k-d-c8zm3FpwHxOE0uh49k0I1"
