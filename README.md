@@ -38,3 +38,5 @@ from sixeyes' [dreamwiki](https://dreamwiki.sixey.es)
 Pokemon sprites from: https://www.kaggle.com/kvpratama/pokemon-images-dataset
 
 Blurry text hack from: http://www.briankhuu.com/blog/self/2015/01/14/css-style-for-ascii-art.html
+
+Thanks to @filippograziano and @winterdeaf for their help on matching the colorscheme with the pokemon
