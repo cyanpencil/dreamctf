@@ -241,24 +241,6 @@ def create_update_chals():
     "flag": 'poke{y0u_mu$t_r34l1ze_th3r3_1$_n0_b0x}'
     })
 
-    #Some more pwn from robin
-    # pwn3
-    declare_chal({ "name": "Gotta go fast",
-        "category": "pwn",
-        "score": 200,
-        "info": """
-
-    People keep volunteering to be tributes.
-    I really think they should stop doing that, I've seen the management system get messed up by this.
-
-    Data: <a href="/static/gotta_go_fast.zip">gotta_go_fast.zip</a>
-
-    Connect with: nc matrx.me 5009
-
-    """,
-    "flag": 'poke{s4n1c_w1ns_th3_hung3r_g4m3SS!}'
-    })
-
     # pwn4
     declare_chal({ "name": "Green shell",
         "category": "pwn",
@@ -294,18 +276,6 @@ def create_update_chals():
         "flag": "poke{h0w_d1d_y0u_g3t_my_secr3t_pwd}"
     })
 
-    declare_chal({
-        "name": "New Technology",
-        "category": "crypto",
-        "score": 150,
-        "info": """
-
-        If it's not Windows New Technology, what else could NT stand for?
-
-        File: <a href="/static/new_technology.py">new_technology.py</a>
-        """,
-        "flag": "poke{Would_number_theory_be_new_technology?}"
-    })
 
     declare_chal({
         "name": "Optimal RSA",
@@ -355,22 +325,6 @@ def create_update_chals():
     })
 
     declare_chal({
-        "name": "n % dumb for n = 100",
-        "category": "pwn",
-        "score": 300,
-        "info": """
-
-        They said something about maths, capitalism and conspiracies to exploit them.
-        I can't deal with crazy right now, so could you just quickly check it out for me?
-
-        Files (Binary and Source): <a href="/static/n_percent_dumb.zip">n_percent_dumb.zip</a>
-
-        Connect with: nc matrx.me 5014
-        """,
-        "flag": "poke{1_filt3r3d_the_f0rm4t_str1ing,_b0$$}"
-    })
-
-    declare_chal({
         "name": "Too Smoll",
         "category": "crypto",
         "score": 200,
@@ -383,23 +337,6 @@ def create_update_chals():
 
         """,
         "flag": "poke{l1k3_a_l1ttl3_puppy}"
-    })
-
-    declare_chal({
-        "name": "Unfriendly RSA",
-        "category": "crypto",
-        "score": 150,
-        "info": """
-
-        So I heard of this great encryption scheme known as textbook RSA.
-        My teacher told my that finding big prime numbers is expensive though, and I needed two keys.
-        So I just use the same modulus again, but with a different public exponent.
-        That shouldn't be a problem, right?
-
-        File: <a href="/static/unfriendly_rsa.py">unfriendly_rsa.py</a>
-
-        """,
-        "flag": "poke{a_pl41n_squ4r3_r00t_you_say?}"
     })
 
     declare_chal({
