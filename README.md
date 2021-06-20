@@ -21,7 +21,7 @@ for basic usage, (no challenges will be up)
 
 `sudo docker-compose up main db`
 
-then, enter into container `pokectf2_main`
+then, enter into container `dreamctf_main_1`
 
 and go to /usr/src/app/
 
