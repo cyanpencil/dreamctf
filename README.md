@@ -7,7 +7,7 @@ Also known as "PokeCTF 2", [this is the original one](https://www.github.com/cya
 
 Here's a screenshot:
 
-![cool ascii](https://www.github.com/cyanpencil/PokeCTF/raw/master/screen.png)
+![cool ascii](https://user-images.githubusercontent.com/3428362/122681530-fd7d3a00-d1f4-11eb-8b8b-40f0763ba0e3.png)
 
 You can try a live version [here](http://www.cyanpencil.xyz:5000).
 
