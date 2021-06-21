@@ -33,10 +33,10 @@ RATE_SCORE = 2
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv('SECRET_KEY', 'for dev')
-app.config["SECURITY_PASSWORD_SALT"] = '1987000500676'
+app.config["SECURITY_PASSWORD_SALT"] = 'xxxxxxxxxxx'
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite')
-app.config["FIRST_BLOOD_WEBHOOK"] = "https://discord.com/api/webhooks/829751917441581067/RLsUYFLz_jiCkyvKHSfAOatJ0KgdHJSercQtl-H4Tr9k-d-c8zm3FpwHxOE0uh49k0I1"
-app.config["SOLVE_WEBHOOK"] = "https://discord.com/api/webhooks/829755829753479238/uy60Zq19FxthMJcGoKokZAGUm49I94MZ2KJ97_sS2hFcto04ZK6wRjxEoNhYEknya5V9"
+app.config["FIRST_BLOOD_WEBHOOK"] = "https://discord.com/api/xxxxxxxx"
+app.config["SOLVE_WEBHOOK"] = "https://discord.com/api/xxxxxxxx"
 #app.config["PREFERRED_URL_SCHEME"] = 'https' #decomment for HTTPS
 CSRFProtect(app)
 
