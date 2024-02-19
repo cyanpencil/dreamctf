@@ -6,7 +6,7 @@
 #
 
 from flask import Flask, render_template, redirect, url_for, flash, session, abort, request
-from flask_security import Security
+# from flask_security import Security
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user, login_required
 from flask_sqlalchemy import SQLAlchemy
 from itsdangerous import URLSafeTimedSerializer
@@ -15,7 +15,6 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, curren
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, RadioField
-from wtforms.validators import Required, Length, EqualTo, Email, Length
 from flask_wtf.csrf import CSRFProtect
 
 import datetime
