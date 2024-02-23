@@ -8,21 +8,10 @@ services:
     ports:
       - "8000:5000"
     environment:
-      - DATABASE_URL=postgresql://poke:poke_naval_army_origin@db:5432/pokectf
       - FLASK_APP=app/__init__.py
       - FLASK_ENV=production
-    depends_on:
-      - db
-    networks:
-      - main
-  db:
-    image: postgres:12-alpine
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=poke
-      - POSTGRES_PASSWORD=poke_naval_army_origin
-      - POSTGRES_DB=pokectf
+      - ./pokectf/instance/db.sqlite:/var/lib/postgresql/data/db.sqlite
     networks:
       - main
   
@@ -147,8 +136,6 @@ services:
         FLAG: poke{1_filt3r3d_the_f0rm4t_str1ing,_b0$$$$}
     ports:
       - "5014:5000"
-volumes:
-  postgres_data:
 networks:
   # main containers should be on a separate network!!!
   main:
